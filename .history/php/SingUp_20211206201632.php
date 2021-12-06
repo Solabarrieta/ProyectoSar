@@ -9,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             $user="root";
             $pass="2000";
 
-            //echo "abriendo conexion con la BD db_G22 ";
+            echo "abriendo conexion con la BD db_G22 ";
             $dns = "mysql:host=localhost;dbname=db_G22";
             $dbh = new PDO($dns, $user, $pass);
             $hashpass = password_hash($userpass, PASSWORD_DEFAULT);
@@ -92,13 +92,12 @@ if (isset($_POST['email'])) {
     <h>Sign Up</h>
     <div class="container">
         <form action="" method="post" class="form">
-            <label for="userName" class="form__label">usuario</label>
             <input type="text" name="userName" id="username" class="form__input">
-            <label for="email" class="form__label">Correo</label>
+            <label for="userName" class="form__label"></label>
             <input type="email" name="email" id="email" class="form__input">
-            <label for="password" class="form__label">Contraseña</label>
+            <label for="email" class="form__label"></label>
             <input type="password" name="password" id="password" class="form__label">
-            <label for="passwordConfirm" class="form__label">Confirma contraseñá</label>
+            <label for="password" class="form__label"></label>
             <input type="password" name="passwordConfirm" id="passwordConfirm" class="form__input">
             <input type="submit" value="SingUp" class="form__submit">
         </form>

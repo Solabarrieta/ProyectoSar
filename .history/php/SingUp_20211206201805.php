@@ -9,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             $user="root";
             $pass="2000";
 
-            //echo "abriendo conexion con la BD db_G22 ";
+            echo "abriendo conexion con la BD db_G22 ";
             $dns = "mysql:host=localhost;dbname=db_G22";
             $dbh = new PDO($dns, $user, $pass);
             $hashpass = password_hash($userpass, PASSWORD_DEFAULT);

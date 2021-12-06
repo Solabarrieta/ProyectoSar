@@ -1,5 +1,4 @@
 body{
-    display: flex;
 }
 .container{
     flex-direction: column;

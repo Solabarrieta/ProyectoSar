@@ -1,7 +1,7 @@
 body{
-    display: flex;
 }
 .container{
+    
     flex-direction: column;
     background-color: aquamarine;
     margin: 0;
