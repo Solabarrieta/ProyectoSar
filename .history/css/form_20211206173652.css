@@ -1,0 +1,11 @@
+body{
+    align-items: center;
+    align-content: center;
+}
+.container{
+    display: flex;
+    background-color: aquamarine;
+    margin: 0;
+}
+.form{
+}

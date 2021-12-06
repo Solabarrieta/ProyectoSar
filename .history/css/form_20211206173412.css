@@ -1,0 +1,8 @@
+body{
+    display: flex;
+}
+.container{
+    background-color: aquamarine;
+    margin: 0;
+    flex-direction: column;    
+}
