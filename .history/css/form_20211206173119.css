@@ -1,8 +1,0 @@
-body{
-    display: flex;
-    flex-direction: column;
-}
-.container{
-    align-items: center;
-    margin: auto;
-}
