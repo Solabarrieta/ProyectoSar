@@ -6,12 +6,13 @@
         <title>Notes App</title>
         <link rel="stylesheet" href="../css/style.css" />
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
         <script src="../js/script.js" defer></script>
     </head>
     <body>
         <button class="add" id="add">
             <i class="fas fa-plus"></i> Add note
         </button>
+        
+        
     </body>
 </html>
