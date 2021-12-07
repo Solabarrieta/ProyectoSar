@@ -1,8 +1,0 @@
-body{
-    display: flex;
-    flex-direction: row;    
-}
-.container{
-    background-color: aquamarine;
-    margin: 0;
-}
