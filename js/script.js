@@ -13,6 +13,7 @@ addBtn.addEventListener("click", () => {
 });
 
 function addNewNote(text = "") {
+    
     const note = document.createElement("div");
     note.classList.add("note");
 
@@ -34,7 +35,7 @@ function addNewNote(text = "") {
     const textArea = note.querySelector("textarea");
 
     textArea.value = text;
-    main.innerHTML = marked(text);
+   // main.innerHTML = marked(text);
 
     editBtn.addEventListener("click", () => {
         main.classList.toggle("hidden");
@@ -48,10 +49,8 @@ function addNewNote(text = "") {
     });
 
     textArea.addEventListener("input", (e) => {
-        const { value } = e.target;
-
-        main.innerHTML = marked(value);
-
+        const { value  } = e.target;
+        note.classList.add(value);
         updateLS();
     });
 
