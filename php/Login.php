@@ -43,20 +43,26 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Login</title>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
-        <link rel="stylesheet" href="styleLogin.css" />
+        <link rel="stylesheet" href="../css/styleLogin.css" />
         <script src="scriptLogin.js"></script>
     </head>
     <body>
         <nav class="container">
             <div class="logo">
-                <i class="far fa-sticky-note"></i>
-                Mis Notas
+                <i class="fas fa-sticky-note"> Mis Notas</i>
+                
             </div>
             <ul>
-                <li><a href="index.php">Página principal</a></li>
+                <a href="index.php">Página principal</a>
             </ul>
+            
         </nav>
-        <hr>
+
+<div id="contenido">
+    <div id="centro" class="centro">
+        <div class="inicio-sesion">
+            Iniciar sesión
+        </div>
         <form id="form" class="form" onsubmit="validarLogin(this.form)" method="post">
             <div class="form-control">
                 <label for="email">Correo electrónico</label>
@@ -67,12 +73,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 <input type="password" placeholder="Contraseña" id="password" name="password" />    
             </div>
             <div class="form-control">
-                <input type="submit" value="Acceso"/>    
+                <input class="acceso" type="submit" value="Acceso"/>    
             </div>
         </form>
         <div class="crear-cuenta">
             <p>¿No tienes cuenta?</p>
             <p>Puedes crearte una cuenta <a href="SignUp.php">aquí</a>.</p>
-        </div>
+	   </div>
+    </div>
+</div>
     </body>
 </html>
