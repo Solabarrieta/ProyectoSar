@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 62.5%;
+}
+
 body {
     background-color: #dfdfdf;
     display: flex;
@@ -29,49 +33,71 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    height: 400px;
+    min-height: 400px;
     width: 400px;
+    font-size: 1.6rem;
+    border: 2px solid white;
+    border-radius: 1rem;
 }
 
+.notes {
+    border: 2px solid white;
+    border-radius: 1rem;
+}
 .note .tools {
     background-color: #9e3a9e;
-    display: flex;
     align-items: center;
     padding: 0.3rem;
-}
-.note .tools .categoria{
-    border: none;
-    color: rgb(255, 255, 255);
-    font-size: 1rem;
-    margin-left: 0.5rem;
-}
-.div__buttons{
-    display: flex;
-    justify-content: space-between;
-}
-.buttons{
-    justify-content: flex-end;
+    border-bottom: none ;
+    border-radius: 1rem 1rem 0 0;
 }
 
-.note .tools .edit {
+
+/* .note .tools .edit {
     background-color:#ffc400;
     border: none;
     color: rgb(255, 255, 255);
     cursor: pointer;
-    font-size: 1rem;
+    margin-left: 0.5rem;
+    height: 0.8rem;
+    border-radius: 5px;
+} */
+
+.note .tools button {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
     margin-left: 0.5rem;
     height: 0.8rem;
     border-radius: 5px;
 }
-.note .tools .delete {
-    background-color:#e21d1d;
+
+.input-titulo{
+    width: 100%;
+    padding: 1rem;
     border: none;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    font-size: 1rem;
-    margin-left: 0.5rem;
-    height: 0.8rem;
-    border-radius: 5px;
+    font-size: 3.2rem;
+    background-color: transparent;
+    border-bottom: 0.1rem solid white;
+    color: white;
+}
+
+.input-titulo::placeholder{
+    color: white;
+}
+
+.categoria{
+    padding: 1rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2rem ;
+}
+
+.categoria::placeholder{
+    color: white;
+    font-size: 2rem;
 }
 
 
@@ -80,18 +106,32 @@ body {
     overflow: hidden;
     height: 400px;
     width: 100%;
+    border-radius: 0 0 1rem 1rem;
 }
 
 .note textarea {
     outline: none;
     font-family: inherit;
-    font-size: 1.2rem;
+    font-size: 2rem;
     border: none;
     height: 400px;
     width: 100%;
-}
+}   
 
 .note .hidden {
     display: none;
 }
+
+.tools h1{
+    display: inline;
+}
+
+.div__buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1.2rem;
+    align-items: center;
+}
+
 

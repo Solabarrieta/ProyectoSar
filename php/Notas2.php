@@ -12,15 +12,16 @@
     <script src="../js/notas.js" defer></script>
 
     <link rel='stylesheet' href="../css/notas.css">
+    <script src="https://kit.fontawesome.com/2a1176e154.js" crossorigin="anonymous"></script>
     <!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script> -->
     <!--<script src="../js/scriptNotas.js" defer></script>-->
 </head>
 
 <body>
-<button class="add" id="add" onclick="">
+    <button class="add" id="add" onclick="">
         <i class="fas fa-plus"></i> Add note
-</button>
+    </button>
 </body>
 
 </html>
