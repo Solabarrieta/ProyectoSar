@@ -7,7 +7,8 @@ body {
     margin: 0;
     background-color: #9567B4;
 }
-.contenido {
+
+#contenido {
     display: flex;
     color:black;
     
@@ -21,7 +22,11 @@ body {
     
 }
 .creacion-cuenta {
+<<<<<<< HEAD
     font-size: 70%;
+=======
+    font-size: 90%;
+>>>>>>> 30df93aa9c5a031252fbe2384726c2e026197c73
     text-align: center;    
     margin-top: 15px;
 }
@@ -37,10 +42,15 @@ body {
 }
 
 #centro{
+<<<<<<< HEAD
 
     max-width: 320px;
     width: 100%;
     
+=======
+    max-width: 320px;
+    width: 100%;
+>>>>>>> 30df93aa9c5a031252fbe2384726c2e026197c73
 }
 
 .creacion-cuenta {
