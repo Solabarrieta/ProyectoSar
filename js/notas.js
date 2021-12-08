@@ -6,8 +6,8 @@ $(document).ready(() => {
         $(xml)
             .find('NoteUser')
             .each(function viewdata() {
-                addNote($(this).text(),$(this).find('text'),$(this).find('Text').attr('categoria'));
-                console.log();
+                addNote($(this).text(),$(this).find('Text').attr("title"),$(this).find('Text').attr('categoria'));
+                console.log($(this).find('Text').attr("title"));
             });
     });
 
@@ -28,15 +28,12 @@ function addNote(text = " ", title = " ", categoria = "") {
             <div class="tools">
                 <h1>${title ? "" : "Título"}</h1>
                 <div class="div__buttons">
-                    <p class = "categoria">${categoria ? "" : "Generico"}<p/>
+                    <p class = "categoria">${categoria ? categoria : "Generico"}<p/>
                     <div class="buttons">
                         <button class="edit"><i class="fas fa-edit"></i></button>
                         <button class="delete"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>
-                
-
-                
             </div>
             <div class="main ${text ? "" : "hidden"}"><h1>fjdskljfasdlk</h1></div>
             
