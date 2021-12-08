@@ -6,8 +6,8 @@ $(document).ready(() => {
         $(xml)
             .find('NoteUser')
             .each(function viewdata() {
-                addNote($(this).text(),$(this).find('text').text());
-                console.log($(this).find('Text'));
+                addNote($(this).text(),$(this).find('text'),$(this).find('Text').attr('categoria'));
+                console.log();
             });
     });
 
@@ -18,23 +18,28 @@ $(document).ready(() => {
 }
 );
 
-function addNote(text = " ", title = " ") {
+function addNote(text = " ", title = " ", categoria = "") {
 
     const note = document.createElement("div");
     note.classList.add("note");
 
     note.innerHTML = `
         <div class="notes">
-        <div class="tools">
-        <i class = "categoria">categoria<i/>
-        <div class="buttons">
-        <button class="edit"><i class="fas fa-edit"></i></button>
-        <button class="delete"><i class="fas fa-trash-alt"></i></button>
-        </div>
+            <div class="tools">
+                <h1>${title ? "" : "Título"}</h1>
+                <div class="div__buttons">
+                    <p class = "categoria">${categoria ? "" : "Generico"}<p/>
+                    <div class="buttons">
+                        <button class="edit"><i class="fas fa-edit"></i></button>
+                        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+                
+
                 
             </div>
-            <div class="main ${text ? "" : "hidden"}"></div>
-            <h1 class=" ${text ? "" : "hidden"}">fjdskljfasdlk</h1>
+            <div class="main ${text ? "" : "hidden"}"><h1>fjdskljfasdlk</h1></div>
+            
             <input:text></input>
             <textarea class="${text ? "hidden" : ""}">
             </textarea>

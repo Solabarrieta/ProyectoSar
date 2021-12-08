@@ -37,7 +37,6 @@ body {
     background-color: #9e3a9e;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     padding: 0.3rem;
 }
 .note .tools .categoria{
@@ -46,6 +45,14 @@ body {
     font-size: 1rem;
     margin-left: 0.5rem;
 }
+.div__buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons{
+    justify-content: flex-end;
+}
+
 .note .tools .edit {
     background-color:#ffc400;
     border: none;
