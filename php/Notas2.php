@@ -23,9 +23,16 @@
     <button class="add" id="add" onclick="">
         <i class="fas fa-plus"></i>
     </button>
-    
 
+    <div class="row">
+        <div class="menu">
+            <input type="text" placeholder="Buscar">
+        </div>
+        <div class="notas" id="notas">
+
+        </div>
     </div>
+
 </body>
 
 </html>

@@ -16,6 +16,7 @@ $(document).ready(() => {
 });
 
 function addNote(text = " ", title = " ", categoria = "", id) { 
+    const notas = document.getElementById("notas");
   const note = document.createElement("div");
   note.classList.add("note");
 
@@ -85,6 +86,7 @@ function updateNotes() {
         console.log(note.value);
     });
 
-    localStorage.setItem("notes", JSON.stringify(notes));
-    
+  textArea.value = text;
+  main.innerHTML = text;
+  notas.appendChild(note);
 }
