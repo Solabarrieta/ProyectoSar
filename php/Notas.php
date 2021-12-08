@@ -37,23 +37,19 @@
                     </select>
                 </form>
                 <?php
-                $cat = isset($_POST['categoriaShow']);
-                if($cat){
                     echo "<table border=1>";
                     echo "<tr><th>Fecha</th><th>Usuario</th><th>Título</th><th>Cuerpo</th></tr>";
                     foreach($xml as $nota){
-                        if($cat==$nota['categoria']){
-                            echo"<tr>
-                            <td>".$nota->fecha."</td><td>".$nota->usuario."</td><td>".$nota->texto->titulo."</td><td>".$nota->texto->cuerpo."</td>
-                            </tr>";
-                        }
+                        echo"<tr>
+                        <td>".$nota->fecha."</td><td>".$nota->usuario."</td><td>".$nota->texto->titulo."</td><td>".$nota->texto->cuerpo."</td>
+                        </tr>";
                     }
                     echo "</table>";
-                }
+                
                 ?>
             </div>
             <div class="column right">
-                <form method="post" class="form" id="form" onsubmit="addNota()">
+                <form method="post" class="form" id="form">
                     <div class="form-control">
                         <label for="text">Categoría: </label>
                         <select name="categoria" id="categoria">
@@ -75,23 +71,21 @@
                     </div>
                 </form>
                 <?php
-
-                    if(isset($_POST['submit'])){
-
+                    if(isset($_POST['texto'])){
                         $categoria = $_POST['categoria'];
                         $titulo = $_POST['titulo'];
                         $cuerpo = $_POST['texto'];
                         $fecha = date("d/m/Y");
 
                         $nota = $xml->addChild('nota');
-                        $nota -> addAtribute('categoria', $categoria);
-                        $nota -> addChild('fecha', $fecha);
-                        $nota -> addChild('usuario', $_SESSION['correo']);
-                        $nota -> addChild('texto');
-                        $texto -> addChild('titulo', $titulo);
-                        $texto -> addChild('cuerpo', $cuerpo);
+                        $nota->addAtribute('categoria', $categoria);
+                        $nota->addChild('fecha', $fecha);
+                        $nota->addChild('usuario', $_SESSION['correo']);
+                        $nota->addChild('texto');
+                        $texto->addChild('titulo', $titulo);
+                        $texto->addChild('cuerpo', $cuerpo);
 
-                        $xml -> asXML("../xml/notas.xml");
+                        $xml->asXML("../xml/notas.xml");
                     }
 
                 ?>
