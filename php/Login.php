@@ -66,7 +66,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <form id="form" class="form" onsubmit="validarLogin(this.form)" method="post">
             <div class="form-control">
                 <label for="email">Correo electrónico</label>
-                <input type="text" placeholder="Correo" id="email" name="email" />    
+                <input type="text" placeholder="alumno@ikasle.ehu.eus" id="email" name="email" />    
             </div>
             <div class="form-control">
                 <label for="password">Contraseña</label>

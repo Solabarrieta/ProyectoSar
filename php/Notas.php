@@ -48,6 +48,7 @@
                 
                 ?>
             </div>
+            <div class="column middle"></div>
             <div class="column right">
                 <form method="post" class="form" id="form">
                     <div class="form-control">
