@@ -20,6 +20,7 @@ $(document).ready(() => {
 });
 
 function addNote(text = " ", title = " ", categoria = "") {
+  const notas = document.getElementById("notas");
   const note = document.createElement("div");
   note.classList.add("note");
 
@@ -30,6 +31,7 @@ function addNote(text = " ", title = " ", categoria = "") {
                 <div class="div__buttons">
 
                     <input type="text" placeholder="Categoria" class="categoria">
+                    <p class = "categoria>
                     <div class="buttons">
                         <button class="edit"><i class="fas fa-edit"></i></button>
                         <button class="delete"><i class="fas fa-trash-alt"></i></button>
@@ -69,5 +71,5 @@ function addNote(text = " ", title = " ", categoria = "") {
 
   textArea.value = text;
   main.innerHTML = text;
-  document.body.appendChild(note);
+  notas.appendChild(note);
 }
