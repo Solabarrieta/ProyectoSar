@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Note>
     <NoteUser id="samuel@gmail.com">
-        <Text categoria="universidad" title="esfsa" img="/images/">
-        Text1
-        </Text>
+        <Text categoria="universidad" title="esfsa" img="/images/">Text1</Text>
     </NoteUser>
     <NoteUser id="samuel@gmail.com">
-        <Text categoria="universidad" title="esfsa" img="/images/">
-        Text2
-        </Text>
+        <Text categoria="universidad" title="esfsa" img="/images/">Text2</Text>
     </NoteUser>
     <NoteUser id="samuel@gmail.com">
         <Text categoria="universidad" title="esfsa" img="/images/">

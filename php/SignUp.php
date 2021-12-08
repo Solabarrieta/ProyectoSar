@@ -83,5 +83,9 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
 
 </body>
 
+<<<<<<< HEAD
+</html>
+=======
 </html>
  Save
+>>>>>>> 30df93aa9c5a031252fbe2384726c2e026197c73
