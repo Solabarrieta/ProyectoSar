@@ -7,8 +7,6 @@
         <Text categoria="universidad" title="titulo2" img="/images/">Text2</Text>
     </NoteUser>
     <NoteUser id="61b0fb12686c11" correo="samuel@gmail.com">
-        <Text categoria="universidad" title="titulo3" img="/images/">
-        Text3
-        </Text>
+        <Text categoria="universidad" title="titulo3" img="/images/">Text3</Text>
     </NoteUser>
 </Note>

@@ -6,11 +6,20 @@ if(isset($_POST['title'])&& isset($_POST['categoria']) && isset($_POST['text'])&
     $correo="user@gmail.com";
     $id=$_POST['id'];
     echo "$text $categoria $title $correo $id ";
-
+    $new=true;
     $xml = simplexml_load_file("../xml/Notes.xml");
-    foreach ($xml->children() as $child) {
-        print_r($child);
-        # code...
+    foreach ($xml->children()->attributes() as $child=>$attribute) {
+        //echo "hola";
+        if($child=="id"){
+            echo $attribute;
+            if($attribute==$id){
+                $new=false;
+            }
+        }
     }
     $Nota= $xml->addChild('NoteUser');
+    if($new){
+        
+    }
+
 }

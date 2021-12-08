@@ -15,23 +15,22 @@ $(document).ready(() => {
   });
 });
 
-function addNote(text = " ", title = " ", categoria = "", id) {
+function addNote(text = " ", title = " ", categoria = "", id) { 
   const note = document.createElement("div");
   note.classList.add("note");
 
   note.innerHTML = `
         <div class="notes">
             <div class="tools">
-                <input type= "text" placeholder="Titulo" class="input-titulo"> 
+                <input type= "text" placeholder="Titulo" value="${title ? "" : title}" class="input-titulo"> 
                 <div class="div__buttons">
-
-                    <input type="text" placeholder="Categoria" class="categoria">
+                    <input type="text" placeholder="Categoria" class="categoria" value>
                     <div class="buttons">
                         <button class="edit"><i class="fas fa-edit"></i></button>
                         <button class="delete"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>
-            </div>function addNote(text = " ", title = " ", categoria = "") 
+            </div>
             <div class="main ${
               text ? "" : "hidden"
             }"><h1>fjdskljfasdlk</h1></div>

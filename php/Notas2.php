@@ -19,9 +19,13 @@
 </head>
 
 <body>
+    
     <button class="add" id="add" onclick="">
-        <i class="fas fa-plus"></i> Add note
+        <i class="fas fa-plus"></i>
     </button>
+    
+
+    </div>
 </body>
 
 </html>
