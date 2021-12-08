@@ -4,7 +4,7 @@
         <Text categoria="universidad" title="titulo1" img="/images/">Text1</Text>
     </NoteUser>
     <NoteUser id="samuel@gmail.com">
-        <Text categoria="universidad" title="titulo2" img="/images/">Text2</Text>
+        <Text categoria="SAR" title="titulo2" img="/images/">Text2</Text>
     </NoteUser>
     <NoteUser id="samuel@gmail.com">
         <Text categoria="universidad" title="titulo3" img="/images/">
