@@ -7,7 +7,6 @@ $(document).ready(() => {
             .find('NoteUser')
             .each(function viewdata() {
                 addNote($(this).text(),$(this).find('Text').attr("title"),$(this).find('Text').attr('categoria'));
-                console.log($(this).find('Text').attr("title"));
             });
     });
 
@@ -26,7 +25,7 @@ function addNote(text = " ", title = " ", categoria = "") {
     note.innerHTML = `
         <div class="notes">
             <div class="tools">
-                <h1>${title ? "" : "Título"}</h1>
+                <h1>${title ? title : "Título"}</h1>
                 <div class="div__buttons">
                     <p class = "categoria">${categoria ? categoria : "Generico"}<p/>
                     <div class="buttons">
@@ -39,6 +38,7 @@ function addNote(text = " ", title = " ", categoria = "") {
             
             <input:text></input>
             <textarea class="${text ? "hidden" : ""}">
+
             </textarea>
         </div>
     `;
@@ -61,7 +61,6 @@ function addNote(text = " ", title = " ", categoria = "") {
     deleteBtn.addEventListener("click", () => {
         console.log("ha pulsado el botón de borrar");
         note.remove();
-
         //updateLS();
     });
 
