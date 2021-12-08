@@ -17,8 +17,8 @@ if(isset($_POST['title'])&& isset($_POST['categoria']) && isset($_POST['text'])&
             }
         }
     }
-    $Nota= $xml->addChild('NoteUser');
     if($new){
+        $Nota= $xml->addChild('NoteUser');
         
     }
 
