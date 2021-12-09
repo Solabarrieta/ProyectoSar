@@ -38,14 +38,21 @@ function addNote(text = " ", title = " ", categoria = "", id) {
                     <div class="buttons">
                         <button class="edit"><i class="fas fa-edit"></i></button>
                         <button class="delete"><i class="fas fa-trash-alt"></i></button>
+
+                        
                     </div>
                 </div>
+
+                <div class='preview'>
+                <input class="imagen" id="file" type="file">
+                <img src="" id="img" width="100" height="100">
+                <input type="button" value="Guardar" id="btn_guardar">
+              </div>
             </div>
             <div class="main ${
               text ? "" : "hidden"
             }"><h1>fjdskljfasdlk</h1></div>
-            
-            <input:text></input>
+
             <textarea class="${text ? "hidden" : ""}">
 
             </textarea>
@@ -56,6 +63,7 @@ function addNote(text = " ", title = " ", categoria = "", id) {
 
   const editBtn = note.querySelector(".edit");
   const deleteBtn = note.querySelector(".delete");
+  // const imagenBtn = note.querySelector(".imagen");
 
   textArea.value = text;
   main.innerHTML = text;
@@ -73,6 +81,36 @@ function addNote(text = " ", title = " ", categoria = "", id) {
         //window.location.replace('../php/AddXMLNote.php');
       },
     });
+  });
+
+  $("#btn_guardar").click(function () {
+    let imagen = document.createElement("img");
+
+    let fd = new FormData();
+    let files = $("#file")[0].files;
+
+    // Check file selected or not
+    if (files.length > 0) {
+      fd.append("file", files[0]);
+
+      $.ajax({
+        url: "../php/SubirFoto.php",
+        type: "post",
+        data: fd,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          if (response != 0) {
+            $("#img").attr("src", response);
+            $(".preview img").show(); // Display image element
+          } else {
+            alert("file not uploaded");
+          }
+        },
+      });
+    } else {
+      alert("Please select a file.");
+    }
   });
 
   deleteBtn.addEventListener("click", () => {
