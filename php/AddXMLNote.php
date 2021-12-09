@@ -1,11 +1,13 @@
 <?php
+session_start();
+if(!isset($_SESSION['correo']))die('Debe iniciar sesion');
 if (isset($_POST['title']) && isset($_POST['categoria']) && isset($_POST['text'])) {
     $title = $_POST['title'];
     $categoria = $_POST['categoria'];
     $text = $_POST['text'];
-    $correo = "user@gmail.com";
+    $correo = $_SESSION['correo'];
+    echo $correo;
     $id = $_POST['id'];
-    echo "$title , $categoria, $text, $id ";
     $new = true;
     $xml = simplexml_load_file("../xml/Notes.xml");
     foreach ($xml->NoteUser as $noteUser) {
@@ -23,13 +25,12 @@ if (isset($_POST['title']) && isset($_POST['categoria']) && isset($_POST['text']
             $domxml->save('../xml/Notes.xml');
         }
     }
-    echo "fjsalfkdsj";
     if ($new) {
         
         try{
             $nota = $xml->addChild('NoteUser');
-            $nota->addAttribute('id', uniqid());
-            $nota->addAttribute('id', $correo);
+            $nota->addAttribute('id', $id);
+            $nota->addAttribute('correo', $correo);
             $xmltext=$nota->addChild('Text',$text);
             $xmltext->addAttribute('categoria', $categoria);
             $xmltext->addAttribute('title', $title);

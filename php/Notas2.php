@@ -1,3 +1,12 @@
+<?php
+session_start();
+$_SESSION['correo'] = "samuel@gmail.com";
+if (!isset($_SESSION['correo'])) {
+    /*echo '<script type="text/javascript"> alert("Debes estar logueado!! ");
+      window.location.href="index.php";
+      </script>';*/
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +18,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/jquery-3.4.1.min.js"></script>
     <!--<script src="../js/script.js" defer></script>-->
-    <script src="../js/notas.js" defer></script>
+    
 
     <link rel='stylesheet' href="../css/notas.css">
     <script src="https://kit.fontawesome.com/2a1176e154.js" crossorigin="anonymous"></script>
@@ -19,8 +28,7 @@
 </head>
 
 <body>
-    
-    <button class="add" id="add" onclick="">
+    <button class="add" id="add" onclick="getId(<?php echo '\'' . $_SESSION['correo'] . '\'' ?>)">
         <i class="fas fa-plus"></i>
     </button>
 
@@ -33,6 +41,10 @@
 
         </div>
     </div>
+    <script src="../js/notas.js"></script>
+    <script>
+        getId(<?php echo '\'' . $_SESSION['correo'] . '\'' ?>);
+    </script>
 
 </body>
 
