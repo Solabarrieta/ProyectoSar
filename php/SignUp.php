@@ -1,18 +1,19 @@
 <?php
+
 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userName"])) {
     $correo = $_POST['email'];
     $userpass = $_POST['password'];
-    $userName=$_POST['userName'];
+    $userName = $_POST['userName'];
     $error = 0;
     if (isset($_POST['email'])) {
         try {
-            $user="root";
-            $pass="";
-            
+            $user = "root";
+            $pass = "";
+
             $dns = "mysql:host=localhost;dbname=proyecto_sar";
             $dbh = new PDO($dns, $user, $pass);
             $hashpass = password_hash($userpass, PASSWORD_DEFAULT);
-            
+
             $stmt = $dbh->prepare("INSERT INTO usuarios (UserName,correo, password) VALUES (?, ?, ?)");
             $stmt->bindParam(1, $userName);
             $stmt->bindParam(2, $correo);
@@ -34,18 +35,20 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear cuenta</title>
+    <title>Document</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
     <link rel="stylesheet" href="../css/signUp.css">
-    <script src="scriptSignup.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/scriptSignup.js" type="text/javascript"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="logo"> 
-            <i class="fas fa-sticky-note">Mis Notas</i> 
+        <div class="logo">
+            <i class="fas fa-sticky-note">Mis Notas</i>
         </div>
-        <ul> 
+        <ul>
             <a href="index.php">Página principal</a>
         </ul>
     </div>
@@ -55,17 +58,17 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             <div class="creacion-cuenta">
                 Crear cuenta
             </div>
-            <form id="form" action="" method="post" class="form" onsubmit="validarSignup()">
+            <form id="form" action="" method="post" class="form">
                 <div class="form-control">
                     <label for="userName" class="form__label">Nombre usuario</label>
-                    <input type="text" name="userName" id="username" class="form__input" placeholder="josul">
+                    <input type="text" name="userName" id="username" class="form__input" placeholder="Nombre">
                 </div>
-            
+
                 <div class="form-control">
                     <label for="email" class="form__label">Correo electrónico</label>
-                    <input type="email" name="email" id="email" class="form__input" placeholder="josu@ikasle.ehu.eus">
+                    <input type="email" name="email" id="email" class="form__input" placeholder="Correo">
                 </div>
-            
+
                 <div class="form-control">
                     <label for="password" class="form__label">Contraseña</label>
                     <input type="password" name="password" id="password" class="form__label" placeholder="Contraseña">
@@ -73,10 +76,10 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
 
                 <div class="form-control">
                     <label for="password" class="form__label">Repetir contraseña</label>
-                    <input type="password" name="password" id="password2" class="form__label" placeholder="Contraseña">
+                    <input type="password" name="password2" id="password2" class="form__label" placeholder="Contraseña">
                 </div>
 
-                <input class="crear" type="submit" value="Crear" class="form__submit">
+                <input id='crear' class="crear" type="submit" value="Crear" onclick="return ValidarSignUp(this.form);" class="form__submit">
             </form>
         </div>
     </div>

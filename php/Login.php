@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $correo = $_POST['email'];
     $userpass = $_POST['password'];
@@ -46,7 +45,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <title>Login</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
     <link rel="stylesheet" href="../css/styleLogin.css" />
-    <script src="scriptLogin.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/scriptLogIn.js"></script>
 </head>
 
 <body>
@@ -55,7 +56,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <i class="fas fa-sticky-note"> Mis Notas</i>
 
         </div>
-<<<<<<< HEAD
         <ul>
             <a href="index.php">Página principal</a>
         </ul>
@@ -66,14 +66,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <div id="centro" class="centro">
             <div class="inicio-sesion">
                 Iniciar sesión
-=======
-        <form id="form" class="form" onsubmit="validarLogin(this.form)" method="post">
-            <div class="form-control">
-                <label for="email">Correo electrónico</label>
-                <input type="text" placeholder="alumno@ikasle.ehu.eus" id="email" name="email" />    
->>>>>>> ff3d5979e5a67f71ed2c7add1290edf8e8317daa
             </div>
-            <form id="form" class="form" onsubmit="validarLogin(this.form)" method="post">
+            <form id="form" class="form" method="post">
                 <div class="form-control">
                     <label for="email">Correo electrónico</label>
                     <input type="text" placeholder="Correo" id="email" name="email" />
@@ -83,7 +77,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                     <input type="password" placeholder="Contraseña" id="password" name="password" />
                 </div>
                 <div class="form-control">
-                    <input class="acceso" type="submit" value="Acceso" />
+                    <input class="acceso" type="submit" onclick="return ValidarLogIn(this.form);" value="Acceso" />
                 </div>
             </form>
             <div class="crear-cuenta">
