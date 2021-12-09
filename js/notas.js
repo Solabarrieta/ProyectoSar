@@ -8,7 +8,8 @@ $(document).ready(() => {
         addNote(
           $(this).find("Text").text(),
           $(this).find("Text").attr("title"),
-          $(this).find("Text").attr("categoria")
+          $(this).find("Text").attr("categoria"),
+          $(this).attr("id")
         );
       });
   });
@@ -19,7 +20,7 @@ $(document).ready(() => {
   });
 });
 
-function addNote(text = " ", title = " ", categoria = "") {
+function addNote(text = " ", title = " ", categoria = "", id) {
   const notas = document.getElementById("notas");
   const note = document.createElement("div");
   note.classList.add("note");
@@ -63,6 +64,15 @@ function addNote(text = " ", title = " ", categoria = "") {
     console.log("ha pulsado el botón de editar");
     main.classList.toggle("hidden");
     textArea.classList.toggle("hidden");
+    $.ajax({
+        type: "POST",
+        url: '../php/AddXMLNote.php',
+        data: {title: title, categoria: categoria, text: text, id: id },
+        success: (data)=>{
+            console.log(data);
+            //window.location.replace('../php/AddXMLNote.php');
+        }
+});
   });
 
   deleteBtn.addEventListener("click", () => {
