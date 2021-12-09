@@ -11,7 +11,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $pass = "TWTnlYm33HtAL";
             $basededatos = "db_G22";
 
-            $dns = "mysql:host=localhost;dbname=proyecto_sar";
+            $dns = "mysql:host=$server;dbname=$basededatos";
             $dbh = new PDO($dns, $user, $pass);
             $hashpass = password_hash($userpass, PASSWORD_DEFAULT);
 
