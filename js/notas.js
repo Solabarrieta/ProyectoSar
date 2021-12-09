@@ -108,7 +108,7 @@ function addNote(text = " ", title = " ", categoria = "", id) {
           alert(response);
           if (response != 0) {
             $("#img").attr("src", response);
-            $(".preview img").show(); // Display image element
+            $(".preview img").show();
           } else {
             alert("No se ha podido subir el archivo!");
           }
