@@ -70,7 +70,7 @@ if (isset($_POST['btn-submit'])) {
             <div class="inicio-sesion">
                 Iniciar sesión
             </div>
-            <form action="Notas.php" id="form" class="form" method="post">
+            <form id="form" class="form" method="post">
                 <div class="form-control">
                     <label for="email">Correo electrónico</label>
                     <input type="text" placeholder="Correo" id="email" name="email" />
