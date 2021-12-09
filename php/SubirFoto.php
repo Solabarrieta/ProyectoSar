@@ -1,23 +1,23 @@
 <?php
 
 if (isset($_FILES['file']['name'])) {
-
     /* Getting file name */
     $filename = $_FILES['file']['name'];
 
     /* Location */
-    $location = "../images/" . $filename;
+    $location =  __DIR__ . "images/" . $filename;
     $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
     $imageFileType = strtolower($imageFileType);
 
     /* Valid extensions */
     $valid_extensions = array("jpg", "jpeg", "png");
-
-    $response = 0;
+    // die($location);
     /* Check file extension */
-    if (in_array(strtolower($imageFileType), $valid_extensions)) {
+    if (in_array($imageFileType, $valid_extensions)) {
         /* Upload file */
-        if (move_uploaded_file($_FILES['file']['tmp_name'], $location)) {
+        $done = move_uploaded_file($_FILES['file']['tmp_name'], $location);
+        if ($done > 0) {
+            die($location);
             $response = $location;
         }
     }
@@ -25,5 +25,4 @@ if (isset($_FILES['file']['name'])) {
     echo $response;
     exit;
 }
-
 echo 0;
