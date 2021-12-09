@@ -1,46 +1,34 @@
-function ValidarLogIn(form)
-{
- 
-
+function ValidarLogIn(form) {
   var email = form.email.value;
   var password = form.password.value;
 
-
-  if(password=="" || email==""){
-    swal("Atención!","Tienes que rellenar todos los campos", "error");
+  if (password == "" || email == "") {
+    swal("Atención!", "Tienes que rellenar todos los campos", "error");
     return false;
-  }
-  
-
-  else if(email != "" && !VerificarCorreo(email)){
-    swal("Atención!","El formato de la dirección de correo no es correcto", "error");
+  } else if (email != "" && !VerificarCorreo(email)) {
+    swal(
+      "Atención!",
+      "El formato de la dirección de correo no es correcto",
+      "error"
+    );
     return false;
-  }
-  
-
-  else if(password.length>8){
-    swal("Atención!","La contraseña solo puede tener 8 caracteres como máximo", "error");
+  } else if (password.length > 8) {
+    swal(
+      "Atención!",
+      "La contraseña solo puede tener 8 caracteres como máximo",
+      "error"
+    );
     return false;
-  }
-
-  else
-    return true;
-
-
-
-
+  } else return true;
 }
 
+function VerificarCorreo(correo) {
+  const expresion =
+    /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
-
-function VerificarCorreo(correo)
-{
-  if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(correo))
+  if (expresion.test(correo)) {
     return true;
-  return false;
-  
+  } else {
+    return false;
+  }
 }
-
-
-
-
