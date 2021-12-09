@@ -26,7 +26,8 @@
 
     <div class="row">
         <div class="menu">
-            <input type="text" placeholder="Buscar">
+            <input type="text" placeholder="Buscar" id="busqueda">
+            <button onclick="filtrarNotas()"><i class="fas fa-search"></i></button>
         </div>
         <div class="notas" id="notas">
 

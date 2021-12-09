@@ -31,7 +31,9 @@ function addNote(text = " ", title = " ", categoria = "", id) {
                 <input type= "text" placeholder="Titulo" value="${title ? title : "Titulo"}" class="input-titulo"> 
                 <div class="div__buttons">
 
-                    <input type="text" placeholder="Categoria" value="${categoria ? categoria : "categoria"}"class="categoria">
+                    <input type="text" placeholder="Categoria" class="categoria" value="${
+                      categoria ? categoria : ""
+                    }">
                     <p class = "categoria>
                     <div class="buttons">
                         <button class="edit"><i class="fas fa-edit"></i></button>
@@ -113,4 +115,26 @@ function updateXML(text, title, categoria, id) {
         }
     });
     
+}
+
+function filtrarNotas() {
+  const busqueda = document.getElementById("busqueda").value;
+  alert(busqueda);
+  const div = document.getElementById("notas");
+
+  div.innerHTML = " ";
+
+  $.get("../xml/Notes.xml", (xml) => {
+    $(xml)
+      .find("NoteUser")
+      .each(function viewdata() {
+        const text = $(this).find("Text").text();
+        const titulo = $(this).find("Text").attr("title");
+        let categoria = $(this).find("Text").attr("categoria");
+        alert(busqueda == categoria);
+        if (busqueda == categoria) {
+          addNote(text, titulo, categoria);
+        }
+      });
+  });
 }
