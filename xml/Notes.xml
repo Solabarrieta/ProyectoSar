@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Note>
-    <NoteUser id="61b0fb12686c9" correo="samuel@gmail.com">
-        <Text categoria="universidad" title="titulo1" img="/images/">Text1</Text>
-    </NoteUser>
-    <NoteUser id="61b0fb12686c10" correo="samuel@gmail.com">
-        <Text categoria="SAR" title="titulo2" img="/images/">Text2</Text>
-    </NoteUser>
-    <NoteUser id="61b0fb12686c11" correo="samuel@gmail.com">
-        <Text categoria="universidad" title="titulo3" img="/images/">Text3</Text>
-    </NoteUser>
+  <NoteUser id="fc45af8c-b880-4fb1-8889-04c9dee9598c" correo="samuel@gmail.com">
+    <Text categoria="Categoria" title=" Titulo"> gshgxhgjx xdmegxmed</Text>
+  </NoteUser>
+  <NoteUser id="c878a90f-0d1c-4266-adf6-8f12c34701e4" correo="samuel@gmail.com">
+    <Text categoria="Categoria" title="titulo"> jfdksljlfjasf</Text>
+  </NoteUser>
 </Note>

@@ -1,22 +1,33 @@
 const addButton = document.getElementById("add");
-
+let session;
+function getId(insession) {
+  session = insession;
+  console.log(session);
+}
 $(document).ready(() => {
   $.get("../xml/Notes.xml", (xml) => {
     $(xml)
       .find("NoteUser")
       .each(function viewdata() {
-        addNote(
-          $(this).find("Text").text(),
-          $(this).find("Text").attr("title"),
-          $(this).find("Text").attr("categoria"),
-          $(this).attr("id")
-        );
+        if ($(this).attr("correo") == session) {
+          addNote(
+            $(this).find("Text").text(),
+            $(this).find("Text").attr("title"),
+            $(this).find("Text").attr("categoria"),
+            $(this).attr("id")
+          );
+        }
       });
   });
 
   addButton.addEventListener("click", () => {
-    //console.log('pulsado');
-    addNote();
+    id = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+      (
+        c ^
+        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+      ).toString(16)
+    );
+    addNote(" ", " ", " ", id);
   });
 });
 
@@ -28,7 +39,9 @@ function addNote(text = " ", title = " ", categoria = "", id) {
   note.innerHTML = `
         <div class="notes">
             <div class="tools">
-                <input type= "text" placeholder="Titulo" class="input-titulo"> 
+                <input type= "text" placeholder="Titulo" value="${
+                  title ? title : "Titulo"
+                }" class="input-titulo"> 
                 <div class="div__buttons">
 
                     <input type="text" placeholder="Categoria" class="categoria" value="${
@@ -50,37 +63,31 @@ function addNote(text = " ", title = " ", categoria = "", id) {
                 </form>
               </div>
             </div>
-            <div class="main ${
-              text ? "" : "hidden"
-            }"><h1>fjdskljfasdlk</h1></div>
-
+            <div class="main ${text ? "" : "hidden"}"></div>
+            
             <textarea class="${text ? "hidden" : ""}">
 
             </textarea>
+            <div class= "confirm__button">
+            <button class="update"><i class="fas fa-pen-alt"></i></button>
+            </div>
         </div>
     `;
   const main = note.querySelector(".main");
   const textArea = note.querySelector("textarea");
+  const htmltitle = note.querySelector(".input-titulo");
+  const htmlcategoria = note.querySelector(".categoria");
 
   const editBtn = note.querySelector(".edit");
   const deleteBtn = note.querySelector(".delete");
+  const updateBtn = note.querySelector(".update");
 
   textArea.value = text;
   main.innerHTML = text;
 
   editBtn.addEventListener("click", () => {
-    console.log("ha pulsado el botón de editar");
     main.classList.toggle("hidden");
     textArea.classList.toggle("hidden");
-    $.ajax({
-      type: "POST",
-      url: "../php/AddXMLNote.php",
-      data: { title: title, categoria: categoria, text: text, id: id },
-      success: (data) => {
-        console.log(data);
-        //window.location.replace('../php/AddXMLNote.php');
-      },
-    });
   });
 
   $("#btn_guardar").click(function () {
@@ -113,14 +120,55 @@ function addNote(text = " ", title = " ", categoria = "", id) {
   });
 
   deleteBtn.addEventListener("click", () => {
-    console.log("ha pulsado el botón de borrar");
     note.remove();
+    console.log(id);
+    deleteNote(id);
+    updateLS();
     //updateLS();
+  });
+  textArea.addEventListener("input", (e) => {
+    const { value } = e.target;
+    main.innerHTML = value;
+    updateLS();
+  });
+
+  updateBtn.addEventListener("click", () => {
+    updateXML(textArea.value, htmltitle.value, htmlcategoria.value, id);
   });
 
   textArea.value = text;
   main.innerHTML = text;
   notas.appendChild(note);
+}
+function updateLS() {
+  const notesText = document.querySelectorAll("textarea");
+
+  const notes = [];
+
+  notesText.forEach((note) => {
+    notes.push(note.value);
+  });
+}
+function updateXML(text, title, categoria, id) {
+  $.ajax({
+    type: "POST",
+    url: "../php/AddXMLNote.php",
+    data: { title: title, categoria: categoria, text: text, id: id },
+    success: (data) => {
+      console.log(data);
+      //window.location.replace('../php/AddXMLNote.php');
+    },
+  });
+}
+function deleteNote(id) {
+  $.ajax({
+    type: "POST",
+    url: "../php/DeleteXMLNote.php",
+    data: { id: id },
+    success: (data) => {
+      console.log(data);
+    },
+  });
 }
 
 function filtrarNotas() {
