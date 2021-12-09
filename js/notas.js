@@ -42,11 +42,12 @@ function addNote(text = " ", title = " ", categoria = "", id) {
                         
                     </div>
                 </div>
-
-                <div class='preview'>
-                <input class="imagen" id="file" type="file">
-                <img src="" id="img" width="100" height="100">
-                <input type="button" value="Guardar" id="btn_guardar">
+                <form method="POST">
+                  <div class='preview'>
+                  <input class="imagen" id="file" type="file">
+                  <img src="" id="img" width="100" height="100">
+                  <input type="button" value="Guardar" id="btn_guardar">
+                </form>
               </div>
             </div>
             <div class="main ${
@@ -63,7 +64,6 @@ function addNote(text = " ", title = " ", categoria = "", id) {
 
   const editBtn = note.querySelector(".edit");
   const deleteBtn = note.querySelector(".delete");
-  // const imagenBtn = note.querySelector(".imagen");
 
   textArea.value = text;
   main.innerHTML = text;
@@ -84,32 +84,31 @@ function addNote(text = " ", title = " ", categoria = "", id) {
   });
 
   $("#btn_guardar").click(function () {
-    let imagen = document.createElement("img");
-
-    let fd = new FormData();
-    let files = $("#file")[0].files;
+    var fd = new FormData();
+    var files = $("#file")[0].files;
 
     // Check file selected or not
     if (files.length > 0) {
       fd.append("file", files[0]);
 
       $.ajax({
-        url: "../php/SubirFoto.php",
-        type: "post",
+        url: "SubirFoto.php",
+        type: "POST",
         data: fd,
         contentType: false,
         processData: false,
         success: function (response) {
+          alert(response);
           if (response != 0) {
             $("#img").attr("src", response);
             $(".preview img").show(); // Display image element
           } else {
-            alert("file not uploaded");
+            alert("No se ha podido subir el archivo!");
           }
         },
       });
     } else {
-      alert("Please select a file.");
+      alert("Por favor, selecciona una imagen");
     }
   });
 
