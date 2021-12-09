@@ -65,14 +65,14 @@ function addNote(text = " ", title = " ", categoria = "", id) {
     main.classList.toggle("hidden");
     textArea.classList.toggle("hidden");
     $.ajax({
-        type: "POST",
-        url: '../php/AddXMLNote.php',
-        data: {title: title, categoria: categoria, text: text, id: id },
-        success: (data)=>{
-            console.log(data);
-            //window.location.replace('../php/AddXMLNote.php');
-        }
-});
+      type: "POST",
+      url: "../php/AddXMLNote.php",
+      data: { title: title, categoria: categoria, text: text, id: id },
+      success: (data) => {
+        console.log(data);
+        //window.location.replace('../php/AddXMLNote.php');
+      },
+    });
   });
 
   deleteBtn.addEventListener("click", () => {
@@ -88,7 +88,6 @@ function addNote(text = " ", title = " ", categoria = "", id) {
 
 function filtrarNotas() {
   const busqueda = document.getElementById("busqueda").value;
-  alert(busqueda);
   const div = document.getElementById("notas");
 
   div.innerHTML = " ";
@@ -100,7 +99,6 @@ function filtrarNotas() {
         const text = $(this).find("Text").text();
         const titulo = $(this).find("Text").attr("title");
         let categoria = $(this).find("Text").attr("categoria");
-        alert(busqueda == categoria);
         if (busqueda == categoria) {
           addNote(text, titulo, categoria);
         }
