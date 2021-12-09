@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Note>
-    <NoteUser id="61b0fb12686c9" correo="samuel@gmail.com">
-        <Text categoria="universidad" title="titulo1" img="/images/">Text1</Text>
-    </NoteUser>
-    <NoteUser id="61b0fb12686c10" correo="samuel@gmail.com">
-        <Text categoria="universidad" title="titulo2" img="/images/">Text2</Text>
-    </NoteUser>
-    <NoteUser id="61b0fb12686c11" correo="samuel@gmail.com">
-        <Text categoria="universidad" title="titulo3" img="/images/">Text3</Text>
-    </NoteUser>
+  <NoteUser id="61b0fb12686c9" correo="samuel@gmail.com">
+    <Text categoria="Universidad" title="titulo prueba" img="/images/">Texto 1 comprobando si esto funciona aunque no sea en tiempo real pero ver que funcione. </Text>
+  </NoteUser>
+  <NoteUser id="61b0fb12686c10" correo="samuel@gmail.com">
+    <Text categoria="Categoria2" title="titulo2" img="/images/">Text2</Text>
+  </NoteUser>
+  <NoteUser id="61b0fb12686c11" correo="samuel@gmail.com">
+    <Text categoria="categoria3" title="titulo3" img="/images/">Text3</Text>
+  </NoteUser>
+  <NoteUser id="61b137e652028">
+    <Text categoria="Categoria 4 " title=" Titulo 4"> Texto 4</Text>
+  </NoteUser>
 </Note>
