@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['btn-submit'])) {
     $correo = $_POST['email'];
     $userpass = $_POST['password'];
     $error = 0;
@@ -80,7 +80,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                     <input type="password" placeholder="Contraseña" id="password" name="password" />
                 </div>
                 <div class="form-control">
-                    <input class="acceso" type="submit" onclick="return ValidarLogIn(this.form);" value="Acceso" />
+                    <input name="btn-submit" class="acceso" type="submit" onclick="return ValidarLogIn(this.form);" value="Acceso" />
                 </div>
             </form>
             <div class="crear-cuenta">
