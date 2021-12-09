@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['correo'])) {
-    echo '<script type="text/javascript"> alert("Debes estar logueado!! ");
+    echo '<script type="text/javascript"> alert("Debes estar logueado!! "' . $_SESSION['correo'] . ');
       window.location.href="index.php";
       </script>';
 }
