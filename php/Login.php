@@ -31,7 +31,7 @@ if (isset($_POST['btn-submit'])) {
             $pw = $row['password'];
             if ($pw == $userpass) {
                 $_SESSION['correo'] = $correo;
-                header("Location:Notas.php");
+                echo '<script>window.location.href = Notas.php</script>';
             } else {
                 $error = 2;
             }
