@@ -92,7 +92,7 @@ body {
     border-radius: 5px;
 } */
 
-.note .tools button {
+.note .tools button,label {
     background-color: transparent;
     border: none;
     color: rgb(255, 255, 255);
@@ -100,6 +100,11 @@ body {
     margin-left: 0.5rem;
     height: 0.8rem;
     border-radius: 5px;
+}
+
+
+.preview img{
+    display: none;
 }
 
 .input-titulo{

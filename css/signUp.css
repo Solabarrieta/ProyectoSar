@@ -14,10 +14,9 @@ body {
     align-items: center;
     justify-content: center;
     
-    margin: 0;
-    padding: 0;
-    min-width: 100vw;
-    min-height: 100vh;
+    margin-top: 150px;
+    min-width: 100%;
+    min-height: 100%;
     
 }
 .creacion-cuenta {
