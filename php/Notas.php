@@ -49,7 +49,11 @@
                 
                 ?>
             </div>
+<<<<<<< HEAD
             
+=======
+            <div class="column middle"></div>
+>>>>>>> ff3d5979e5a67f71ed2c7add1290edf8e8317daa
             <div class="column right">
                 <?php
                 require_once('Notas2.php');

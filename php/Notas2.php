@@ -1,3 +1,8 @@
+<?php
+session_start();
+include "../html/Header.html";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +24,7 @@
 </head>
 
 <body>
-    
+
     <button class="add" id="add" onclick="">
         <i class="fas fa-plus"></i>
     </button>

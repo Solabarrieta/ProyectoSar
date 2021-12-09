@@ -34,7 +34,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crear cuenta</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
     <link rel="stylesheet" href="../css/signUp.css">
     <script src="scriptSignup.js"></script>
@@ -58,12 +58,12 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             <form id="form" action="" method="post" class="form" onsubmit="validarSignup()">
                 <div class="form-control">
                     <label for="userName" class="form__label">Nombre usuario</label>
-                    <input type="text" name="userName" id="username" class="form__input" placeholder="Nombre">
+                    <input type="text" name="userName" id="username" class="form__input" placeholder="josul">
                 </div>
             
                 <div class="form-control">
                     <label for="email" class="form__label">Correo electrónico</label>
-                    <input type="email" name="email" id="email" class="form__input" placeholder="Correo">
+                    <input type="email" name="email" id="email" class="form__input" placeholder="josu@ikasle.ehu.eus">
                 </div>
             
                 <div class="form-control">
@@ -83,9 +83,4 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
- Save
->>>>>>> 30df93aa9c5a031252fbe2384726c2e026197c73

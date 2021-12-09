@@ -55,6 +55,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <i class="fas fa-sticky-note"> Mis Notas</i>
 
         </div>
+<<<<<<< HEAD
         <ul>
             <a href="index.php">Página principal</a>
         </ul>
@@ -65,6 +66,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <div id="centro" class="centro">
             <div class="inicio-sesion">
                 Iniciar sesión
+=======
+        <form id="form" class="form" onsubmit="validarLogin(this.form)" method="post">
+            <div class="form-control">
+                <label for="email">Correo electrónico</label>
+                <input type="text" placeholder="alumno@ikasle.ehu.eus" id="email" name="email" />    
+>>>>>>> ff3d5979e5a67f71ed2c7add1290edf8e8317daa
             </div>
             <form id="form" class="form" onsubmit="validarLogin(this.form)" method="post">
                 <div class="form-control">
