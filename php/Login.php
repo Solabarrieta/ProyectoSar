@@ -5,7 +5,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $error = 0;
     if (isset($_POST['email'])) {
         try {
-            require_once "DbConfig.php";
+            $server = "localhost";
+            $user = "G22";
+            $pass = "TWTnlYm33HtAL";
+            $basededatos = "db_G22";
 
             $dns = "mysql:host=localhost;dbname=proyecto_sar";
             $dbh = new PDO($dns, $user, $pass);
