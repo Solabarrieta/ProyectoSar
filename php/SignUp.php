@@ -7,10 +7,9 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
     $error = 0;
     if (isset($_POST['email'])) {
         try {
-            $user = "root";
-            $pass = "";
+            require_once "DbConfig.php";
 
-            $dns = "mysql:host=localhost;dbname=proyecto_sar";
+            $dns = "mysql:host=$server;dbname=$basededatos";
             $dbh = new PDO($dns, $user, $pass);
             $hashpass = password_hash($userpass, PASSWORD_DEFAULT);
 
