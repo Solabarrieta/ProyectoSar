@@ -136,23 +136,21 @@ function deleteNote(id) {
 }
 
 function filtrarNotas() {
-    const busqueda = document.getElementById("busqueda").value;
-    alert(busqueda);
-    const div = document.getElementById("notas");
+  const busqueda = document.getElementById("busqueda").value;
+  const div = document.getElementById("notas");
 
-    div.innerHTML = " ";
+  div.innerHTML = " ";
 
-    $.get("../xml/Notes.xml", (xml) => {
-        $(xml)
-            .find("NoteUser")
-            .each(function viewdata() {
-                const text = $(this).find("Text").text();
-                const titulo = $(this).find("Text").attr("title");
-                let categoria = $(this).find("Text").attr("categoria");
-                alert(busqueda == categoria);
-                if (busqueda == categoria) {
-                    addNote(text, titulo, categoria);
-                }
-            });
-    });
+  $.get("../xml/Notes.xml", (xml) => {
+    $(xml)
+      .find("NoteUser")
+      .each(function viewdata() {
+        const text = $(this).find("Text").text();
+        const titulo = $(this).find("Text").attr("title");
+        let categoria = $(this).find("Text").attr("categoria");
+        if (busqueda == categoria) {
+          addNote(text, titulo, categoria);
+        }
+      });
+  });
 }
