@@ -62,7 +62,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     </nav>
 
-    <div id="contenido">
+    <div id="contenido" class="contenido">
         <div id="centro" class="centro">
             <div class="inicio-sesion">
                 Iniciar sesión
