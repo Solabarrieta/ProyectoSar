@@ -69,7 +69,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <div class="inicio-sesion">
                 Iniciar sesión
             </div>
-            <form id="form" class="form" method="post">
+            <form action="Notas.php" id="form" class="form" method="post">
                 <div class="form-control">
                     <label for="email">Correo electrónico</label>
                     <input type="text" placeholder="Correo" id="email" name="email" />

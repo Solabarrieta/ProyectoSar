@@ -60,7 +60,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             <div class="creacion-cuenta">
                 Crear cuenta
             </div>
-            <form id="form" action="" method="post" class="form">
+            <form id="form" action="Login.php" method="post" class="form">
                 <div class="form-control">
                     <label for="userName" class="form__label">Nombre usuario</label>
                     <input type="text" name="userName" id="username" class="form__input" placeholder="Nombre">
