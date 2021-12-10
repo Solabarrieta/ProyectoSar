@@ -29,7 +29,7 @@ if (isset($_POST['btn-submit'])) {
             $error = 3;
         } else {
             $pw = $row['password'];
-            if ($pw == $userpass) {
+            if (password_verify($userpass, $pw)) {
                 $_SESSION['correo'] = $correo;
                 header("Location: Notas.php");
             } else {
