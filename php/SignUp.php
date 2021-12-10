@@ -16,10 +16,10 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             $dbh = new PDO($dns, $user, $pass);
             $hashpass = password_hash($userpass, PASSWORD_DEFAULT);
 
-            $stmt = $dbh->prepare("INSERT INTO usuarios (UserName,correo, password) VALUES (?, ?, ?)");
+            $stmt = $dbh->prepare("INSERT INTO usuarios (UserName,correo, pass) VALUES (?, ?, ?)");
             $stmt->bindParam(1, $userName);
             $stmt->bindParam(2, $correo);
-            $stmt->bindParam(3, $userpass);
+            $stmt->bindParam(3, $hashpass);
             $stmt->execute();
             $dbh = null;
         } catch (PDOException $e) {
@@ -60,7 +60,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             <div class="creacion-cuenta">
                 Crear cuenta
             </div>
-            <form id="form" action="Login.php" method="post" class="form">
+            <form id="form" method="post" class="form">
                 <div class="form-control">
                     <label for="userName" class="form__label">Nombre usuario</label>
                     <input type="text" name="userName" id="username" class="form__input" placeholder="Nombre">
