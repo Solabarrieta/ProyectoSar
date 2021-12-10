@@ -22,6 +22,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
             $stmt->bindParam(3, $hashpass);
             $stmt->execute();
             $dbh = null;
+            header("Location: Login.php");
         } catch (PDOException $e) {
             echo 'ha ocurrido un error durante la creación de la conexion a la BD';
             die($e->getMessage());
