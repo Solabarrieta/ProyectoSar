@@ -31,7 +31,7 @@ if (isset($_POST['btn-submit'])) {
             $pw = $row['pass'];
             if (password_verify($userpass, $pw)) {
                 $_SESSION['correo'] = $correo;
-                header("Location: ./Notas.php");
+                header("Location: Notas.php");
             } else {
                 $error = 2;
             }
