@@ -5,7 +5,7 @@ function getId(insession) {
   console.log(session);
 }
 $(document).ready(() => {
-  $.get("../xml//Notes.xml?id=" + Math.random(), (xml) => {
+  $.get(`../xml//Notes.xml?id=${Math.random()}`, (xml) => {
     $(xml)
       .find("NoteUser")
       .each(function viewdata() {
