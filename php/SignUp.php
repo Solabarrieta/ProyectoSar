@@ -7,24 +7,30 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST["userNam
     $error = 0;
     if (isset($_POST['email'])) {
         try {
-            $server = "localhost";
-            $user = "G22";
-            $pass = "TWTnlYm33HtAL";
-            $basededatos = "db_G22";
-
+            include "DbConfig.php";
             $dns = "mysql:host=$server;dbname=$basededatos";
             $dbh = new PDO($dns, $user, $pass);
             $hashpass = password_hash($userpass, PASSWORD_DEFAULT);
-
-            $stmt = $dbh->prepare("INSERT INTO usuarios (UserName,correo, pass) VALUES (?, ?, ?)");
+            $stmt = $dbh->prepare("SELECT * FROM usuarios WHERE UserName=? OR correo=? ");
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $stmt->bindParam(1, $userName);
             $stmt->bindParam(2, $correo);
-            $stmt->bindParam(3, $hashpass);
             $stmt->execute();
+            $row = $stmt->fetch();
+            if ($row = 0) {
+                $stmt1 = $dbh->prepare("INSERT INTO usuarios (UserName,correo, pass) VALUES (?, ?, ?)");
+                $stmt1->bindParam(1, $userName);
+                $stmt1->bindParam(2, $correo);
+                $stmt1->bindParam(3, $hashpass);
+                $stmt1->execute();
+                header("Location: Login.php");
+            } else {
+                echo '<script type="text/javascript"> alert("El usuario introducido ya existe en la base de datos");
+                </script>';
+            }
             $dbh = null;
-            header("Location: Login.php");
         } catch (PDOException $e) {
-            echo 'ha ocurrido un error durante la creación de la conexion a la BD';
+            echo 'ha ocurrido un error durante la conexion a la BD';
             die($e->getMessage());
         }
     }

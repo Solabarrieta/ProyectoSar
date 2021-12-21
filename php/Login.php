@@ -6,10 +6,7 @@ if (isset($_POST['btn-submit'])) {
     $error = 0;
     if (isset($_POST['email'])) {
         try {
-            $server = "localhost";
-            $user = "G22";
-            $pass = "TWTnlYm33HtAL";
-            $basededatos = "db_G22";
+            include "DbConfig.php";
 
             $dns = "mysql:host=$server;dbname=$basededatos";
             $dbh = new PDO($dns, $user, $pass);
