@@ -2,3 +2,4 @@ images/
 .DS_Store
 .history/
 *.pdf
+./php/DbConfig.php
