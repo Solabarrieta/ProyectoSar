@@ -150,6 +150,12 @@ function updateLS() {
   });
 }
 function updateXML(text, title, categoria, id) {
+  categoria = categoria.trimStart();
+  categoria = categoria.trimEnd();
+  title = title.trimStart();
+  title = title.trimEnd();
+  text = text.trimStart();
+  text = text.trimEnd();
   $.ajax({
     type: "POST",
     url: "../php/AddXMLNote.php",
