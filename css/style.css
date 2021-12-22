@@ -15,6 +15,27 @@ body {
     padding-top: 3rem;
 }
 
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+}
+
+.logoutBtn{
+    background-color: #9e3a9e;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+}
 
 
 .add {
@@ -24,9 +45,7 @@ body {
     color: white;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
+    margin: 1rem;
 }
 
 .row{

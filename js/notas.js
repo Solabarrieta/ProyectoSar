@@ -196,3 +196,16 @@ function filtrarNotas() {
       });
   });
 }
+
+const logoutButton = document.getElementById("logoutbtn");
+
+logoutButton.addEventListener("click", () => {
+  $.ajax({
+    type: "GET",
+    url: "../php/Logout.php",
+    success: () => {
+      alert("Se ha cerrado sesión correctamente, hasta otra !");
+      window.location.href = "index.php";
+    },
+  });
+});

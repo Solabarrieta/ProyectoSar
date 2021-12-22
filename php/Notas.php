@@ -16,20 +16,22 @@ if (!isset($_SESSION['correo'])) {
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/jquery-3.4.1.min.js"></script>
-    <!--<script src="../js/script.js" defer></script>-->
 
 
     <link rel='stylesheet' href="../css/notas.css">
     <script src="https://kit.fontawesome.com/2a1176e154.js" crossorigin="anonymous"></script>
-    <!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>-->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script> -->
-    <!--<script src="../js/scriptNotas.js" defer></script>-->
 </head>
 
 <body>
-    <button class="add" id="add" onclick="getId(<?php echo '\'' . $_SESSION['correo'] . '\'' ?>)">
-        <i class="fas fa-plus"></i>
-    </button>
+    <nav class="nav">
+        <button class="add" id="add" onclick="getId(<?php echo '\'' . $_SESSION['correo'] . '\'' ?>)">
+            Añade una nota
+            <i class="fas fa-plus"></i>
+        </button>
+        <input class="logoutBtn" id="logoutbtn" type="submit" value="Log Out">
+    </nav>
+    <div class="btnContainer">
+    </div>
 
     <div class="row">
         <div class="menu">
